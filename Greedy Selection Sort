@@ -1,0 +1,32 @@
+def findLocalMinimum(start, end, array):
+#	print(1, start, end)
+	minimum = array[start]
+	index = -1	
+	#print(start,end)
+	for i in range(start+1, end-1):
+	    if(array[i]< array[i+1] and array[i]<array[start]):
+	        minimum = array[i]
+	        index = i
+	        print(minimum, i)
+	        break
+	return (minimum, index) 	
+
+def selectionSortG(array):
+	for i in range(len(array)):
+		minimum, index = findLocalMinimum(i, len(array), array)
+		if(index == -1):
+		    break
+		temp = array[i]
+		array[i] = minimum
+		array[index] = temp
+	print(array)
+
+print('Enter elements of array: ')
+array = [int(i) for i in input().split()]
+arrayG = [int(i) for i in array]
+print("-------INPUT ARRAY----------")
+print(arrayG)
+print("------SORTED ARRAY AFTER GREEDY SELECTION SORT------")
+selectionSortG(arrayG)
+
+##Input: 21 3 72 14 81
