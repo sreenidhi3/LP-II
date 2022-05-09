@@ -1,0 +1,44 @@
+'''
+    Prim's Algorithm
+    Prim's algorithm starts with the single node and explores all the adjacent nodes
+    with all the connecting edges at every step. The edges with the minimal weights
+    causing no cycles in the graph got selected.
+
+'''
+
+def findNextVertex(graph, mst, current):
+    minIndex = -1
+    minVal = 9999
+    for i in range(len(graph[current])):
+        print(i)
+        if (i not in mst):
+            if(graph[current][i] < minVal and graph[current][i] != -1):
+                minVal = graph[current][i]
+                minIndex = i
+    return minIndex
+
+graph = [
+            [-1, -1, 3, -1, -1],
+            [-1, -1, 10, 4, -1],
+            [3, 10, -1, 2, 6],
+            [-1, 4, 2, -1, 1],
+            [-1, -1, 6, 1, -1]
+        ]
+        
+mst = []
+cost = []
+
+start = 1
+mst.append(start)
+for i in mst:
+    start = i
+    while(findNextVertex(graph, mst, start) != -1):
+        print('Mst')
+        print(mst)
+        start = findNextVertex(graph, mst, start)
+        mst.append(start)
+        print('Start')
+        print(start)
+print(mst)
+
+
