@@ -25,6 +25,37 @@ def bfs(visited, graph, node):
 print("\n\n-----Breadth-First Search----")
 bfs(visited, graph, '1')
 
+---------------------
+**recusrsive**
+
+n = int(input()) # no of nodes
+graph = {} 
+
+for i in range(n):
+    node = input() # inputs node no
+    graph[node] = list(map(str, input().rstrip().split())) # inputs connected nodes for that node
+visited = []
+queue = [] 
+
+def bfs(visited, graph, node): 
+  if node not in visited:
+    visited.append(node)
+    queue.append(node)
+  if( not queue):
+    return
+  m = queue.pop(0) 
+  print (m, end = " ") 
+
+  for neighbour in graph[m]:
+    if neighbour not in visited:
+      visited.append(neighbour)
+      queue.append(neighbour)
+  bfs(visited, graph, node)
+
+
+print("\n\n-----Breadth-First Search----")
+bfs(visited, graph, '1')
+
 
 ---------------------------------------------------------------------------
 
