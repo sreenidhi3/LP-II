@@ -22,3 +22,14 @@ String sub = 'Test Mail';
 String body = 'Hello! This message is send from salesforce using Apex Programming';
 SendEmail.sendMail(addresses, sub, body);
 System.debug('Mail Sent! Please check your inbox.');
+
+---------------------------------------
+<apex:page >
+  	<apex:sectionHeader title="Welcome" subtitle="Apex World Member" />
+ 
+    <apex:image value="https://www.mycplus.com/mycplus/wp-content/uploads/2017/12/hello_world-850x451.png"
+                styleClass="logo" width="500px"/>
+    <apex:form id="changeStatusForm">
+        <input type="text" id="hell" margin="50px" />
+    </apex:form>
+</apex:page>
