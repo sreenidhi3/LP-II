@@ -1,0 +1,53 @@
+# graph = [
+#     [0, 1, 0, 0, 1],
+#     [1, 0, 1, 0, 1],
+#     [0, 1, 0, 1, 1],
+#     [0, 0, 1, 0, 1],
+#     [1, 1, 1, 1, 0]
+#     ]
+    
+graph = [
+    [0, 0, 1, 0, 1],
+    [0, 0, 1, 1, 1],
+    [1, 1, 0, 1, 0],
+    [0, 1, 1, 0, 1],
+    [1, 1, 0, 1, 0]
+    ]
+
+nodesl = []
+
+nodes = len(graph)
+for i in range(nodes):
+    nodesl.append(-1)
+    
+m = nodes-1
+
+colors = []
+for i in range(m):
+    colors.append(i)
+print('Colors: ' , colors)
+    
+def check(i, color, graph):
+    adj = graph[i]
+    for v in range(len(adj)):
+        if adj[v] == 1:
+            if nodesl[v] == color: 
+                return False
+    return True
+
+# start = 1 
+# visited = []
+for i in range(nodes):
+    if(nodesl[i] == -1): #no colour assigned
+        for color in colors:
+            print('It Colour: ', color)
+            q = check(i, color, graph)
+            if(q):
+                nodesl[i] = color
+                break
+    print('Iteration:  ', i, " ",nodesl)
+         
+print(nodesl)   
+            
+        
+    
