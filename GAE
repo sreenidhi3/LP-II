@@ -1,0 +1,24 @@
+python -V
+
+curl https://sdk.cloud.google.com | bash
+
+.....
+
+gcloud init
+
+**choose account**
+press Y
+
+git clone https://github.com/GoogleCloudPlatform/python-docs-samples
+
+cd python-docs-samples/appengine/standard/hello_world
+
+dev_appserver.py app.yaml
+
+------
+*Run the command Ctrl + C*
+
+gcloud app deploy
+
+*press Y and enter to continue.*
+
