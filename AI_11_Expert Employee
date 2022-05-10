@@ -1,0 +1,62 @@
+QUESTIONS = [
+	    'How many calls do you answer per day out of 10?',
+	    'How many holidays do you take per 10 days?',
+	    'Per 10 issues how many are you able to solve?',
+	    'Per 10 calls how many do you transfer to the manager?',
+	    'How many tasks are completed on an average out of 10?',
+	    'What is your averge rating on by the customers?',
+	    'What is your avergae rating from collegue?',
+	    'How many days are you late to work in last 10 days?',
+	]
+	
+THRESHOLD = {
+	    'Mild': 30,
+	    'Severe': 50,
+	    'Extreme': 75
+	}
+
+def expertSystem(questions, threshold):
+	    score = 0
+	    for question in questions:
+	        print(question+" ")
+	        ip = input('> ')
+	        while((not ip.isnumeric()) or int(ip) < 1 or int(ip) > 10):
+	            print('Enter a valid input !')
+	            ip = input('> ')
+	        score += int(ip)
+	    print()
+	    print()
+	
+	    if score >= threshold['Extreme']:
+	        print("You are showing symptoms of having EXTREME COVID-19")
+	        print("Please visit the doctor immediately and tested")
+	        print("Based on your symptoms, You might need Immediate Hospitalization")
+	
+
+	    elif score >= threshold['Severe']:
+	        print("Based on your answers You are showing Symptoms of COVID-19")
+	        print("You are advised to contact a COVID-19 Specialist ASAP")
+	        print()
+	        print()
+	
+
+	    elif score >= threshold['Mild']:
+	        print("Based on your answers You are showing Symptoms of MILD COVID-19")
+	        print("Please Isolate yourself immediately on a precautionary basis")
+	        print("As this has a possibility of being a false positive , please consider testing yourself")
+	        print()
+	        print()
+
+	    else:
+	        print("You are Showing NO Symptoms of COVID-19")
+	        print("This might be a false negative, If you feel unsure, please get Tested")
+	        print()
+	        print()
+
+	
+if '__main__' == __name__:
+	
+
+	    print("\n\n\t\tWelcome To The COVID-19 D EXPERT SYSTEM\n")
+	    print("\tNote : Please answer the following questions very honestly\n\n")
+	    expertSystem(QUESTIONS, THRESHOLD)
