@@ -9,5 +9,16 @@ String body = 'Hello from Salesforce.';
 SendEmail.sendMail(address, subject, body);
 System.debug('Mail Sent!');
 
+
+//change
+String[] toAddresses = new String[] {address};
+
 ----------------------------------------
 System.debug('Factorial of 5 is ' + Factorial.factorial(5));
+
+----------------------------------------
+String[] addresses = new List<string>{'bendresreenidhi@gmail.com', 'sreenidhi.bendre_comp2019@pccoer.in'};
+String sub = 'Test Mail';
+String body = 'Hello! This message is send from salesforce using Apex Programming';
+SendEmail.sendMail(addresses, sub, body);
+System.debug('Mail Sent! Please check your inbox.');
