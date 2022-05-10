@@ -1,0 +1,13 @@
+SQL Query
+
+SELECT Name, sreenidhibendre__Course_Name__c FROM sreenidhibendre__Learner__c
+
+----------------------------------------
+String address = 'sreenidhi.bendre_comp2019@pccoer.in';
+String subject = 'Test Email';
+String body = 'Hello from Salesforce.';
+SendEmail.sendMail(address, subject, body);
+System.debug('Mail Sent!');
+
+----------------------------------------
+System.debug('Factorial of 5 is ' + Factorial.factorial(5));
